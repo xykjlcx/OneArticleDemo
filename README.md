@@ -1,7 +1,9 @@
 # OneArticleDemo
-这是一个基于Android的架构组件开发的App《每日美文》，它使用MVVM模式
+《每日美文》是一个基于Android Architecture Components开发的Application
+它是作者`Android 构建MVVM系列`博客的Demo，未来可能会将它集成到作者的毕设Ocean Mooc之中
+这是一个非常简易的项目，意图是通过它演示基于Architecture Components架构MVVM的开发模式
 
-### 目录树
+## 目录树
 1. `Android 构建MVVM系列(一) 之 MVVM架构快速入门`
     - 前言
     - 分层思想
@@ -16,3 +18,6 @@
 5. Android 构建MVVM系列(五) 之 构建更好的 Demo
 6. Android 构建MVVM系列(六) 之 总结与展望
 
+## 如有疑问，欢迎骚扰
+可以关注我的公众号：AliOcean
+![AliOcean](https://mmbiz.qpic.cn/mmbiz_jpg/14z472NOJo81VwnkLLwMZ2YSbfiaM4oaNcn1RQjJEIv6XPem6ASCgWic1nVqJ5hWvsMYfAh8ianpqV1ftiajtuNzcw/0?wx_fmt=jpeg)
