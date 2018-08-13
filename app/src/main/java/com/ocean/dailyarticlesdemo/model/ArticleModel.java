@@ -5,7 +5,7 @@ package com.ocean.dailyarticlesdemo.model;
  * Author :  ocean
  * Email  :  348686686@qq.com
  */
-public class OneArticleModel {
+public class ArticleModel{
 
     /**
      * ResultCode : 1
@@ -43,7 +43,7 @@ public class OneArticleModel {
 
     @Override
     public String toString() {
-        return "OneArticleModel{" +
+        return "ArticleModel{" +
                 "ResultCode=" + ResultCode +
                 ", ErrCode='" + ErrCode + '\'' +
                 ", Body=" + Body +

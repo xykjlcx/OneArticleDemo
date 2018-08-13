@@ -8,7 +8,7 @@ import okhttp3.MediaType
  * Author :  ocean
  * Email  :  348686686@qq.com
  */
-object OceanConstant{
+object AppConstant{
 
     /**
      * 是否开启Debug模式

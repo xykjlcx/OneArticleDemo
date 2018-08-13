@@ -5,8 +5,8 @@ import android.arch.lifecycle.MutableLiveData
 import android.os.Handler
 import android.os.Message
 import com.ocean.dailyarticlesdemo.other.OceanUtil
-import com.ocean.dailyarticlesdemo.model.OneArticleModel
-import com.ocean.dailyarticlesdemo.other.OceanConstant
+import com.ocean.dailyarticlesdemo.model.ArticleModel
+import com.ocean.dailyarticlesdemo.other.AppConstant
 
 /**
  * Created by ocean on 2018/8/12
@@ -14,15 +14,15 @@ import com.ocean.dailyarticlesdemo.other.OceanConstant
  * Email  :  348686686@qq.com
  */
 
-class MainRepository(application: Application){
+class ArticRepository(application: Application){
 
-    private var liveData = MutableLiveData<OneArticleModel>()
+    private var liveData = MutableLiveData<ArticleModel>()
 
     init {
-       getHttpData()
+//       getHttpData()
     }
 
-    fun getLiveDta():MutableLiveData<OneArticleModel>{
+    fun getLiveDta():MutableLiveData<ArticleModel>{
         return liveData
     }
 
@@ -31,7 +31,7 @@ class MainRepository(application: Application){
         params["TransCode"] = "030111"
         params["OpenId"] = "123456789"
         OceanUtil.httpRequest(
-                OceanConstant.URL,
+                AppConstant.URL,
                 params,
                 object : Handler(){
                     override fun handleMessage(msg: Message?) {

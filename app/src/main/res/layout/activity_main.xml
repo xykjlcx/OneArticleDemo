@@ -12,6 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         app:cardCornerRadius="10dp"
+        app:cardUseCompatPadding="true"
+        app:cardPreventCornerOverlap="true"
         app:cardElevation="10dp">
         <LinearLayout
             android:layout_width="match_parent"

@@ -8,19 +8,19 @@ import android.view.View
 import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.ocean.dailyarticlesdemo.R
-import com.ocean.dailyarticlesdemo.model.OneArticleModel
-import com.ocean.dailyarticlesdemo.viewmodel.MainViewModel
+import com.ocean.dailyarticlesdemo.model.ArticleModel
+import com.ocean.dailyarticlesdemo.viewmodel.ArticleViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private var vm : MainViewModel? = null
+    private var vm : ArticleViewModel? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         // 获取vm对象
-        vm = ViewModelProviders.of(this).get(MainViewModel::class.java)
+        vm = ViewModelProviders.of(this).get(ArticleViewModel::class.java)
         initData()
     }
 
@@ -33,13 +33,15 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    fun updateView(model:OneArticleModel){
-        tv_title.text = "《 ${model.body.word_from} 》"
+    fun updateView(model: ArticleModel){
+        tv_title.text = model.body.word_from
         tv_author.text = "—— " +  model.body.img_author
         tv_digest.text = model.body.word
         Glide
                 .with(this)
                 .load(model.body.img_url)
+                .dontAnimate()
+                .centerCrop()
                 .into(img_left)
         Toast.makeText(this,"更新成功",Toast.LENGTH_SHORT).show()
     }

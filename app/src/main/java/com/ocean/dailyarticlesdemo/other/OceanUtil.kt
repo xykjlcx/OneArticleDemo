@@ -5,7 +5,7 @@ import android.os.Message
 import android.util.Log
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.ocean.dailyarticlesdemo.model.OneArticleModel
+import com.ocean.dailyarticlesdemo.model.ArticleModel
 import okhttp3.*
 import org.json.JSONObject
 import java.io.IOException
@@ -15,7 +15,6 @@ import java.util.*
  * Created by ocean on 2018/8/11
  * Author :  ocean
  * Email  :  348686686@qq.com
- * 
  */
 
 object OceanUtil{
@@ -34,7 +33,7 @@ object OceanUtil{
      */
     fun httpRequest(url: String,params: HashMap<String,Any>,handler: Handler){
         var jsonObject = JSONObject(params)
-        var requestBody = RequestBody.create(OceanConstant.MEDIA_TYPE_JSON,jsonObject.toString())
+        var requestBody = RequestBody.create(AppConstant.MEDIA_TYPE_JSON,jsonObject.toString())
         val okHttpClient = Holder.OK_HTTP_CLIENT
         val request = Request.Builder()
                 .url(url)
@@ -62,17 +61,17 @@ object OceanUtil{
      * @param any
      */
     fun logE(any: Any) {
-        if (OceanConstant.isDegug)
+        if (AppConstant.isDegug)
             Log.e(TAG,"-> -> -> 日志打印【 $any 】")
     }
 
     /**
      * 数据转换
      */
-    fun convertData(result:String): OneArticleModel {
+    fun convertData(result:String): ArticleModel {
         return Holder.GSON.fromJson(
                 result,
-                object : TypeToken<OneArticleModel>(){}.type
+                object : TypeToken<ArticleModel>(){}.type
         )
     }
 
